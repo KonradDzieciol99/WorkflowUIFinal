@@ -19,6 +19,7 @@ export class AuthorizationGuard implements CanActivate {
 
 
     canActivate() {
+      console.log((Math.floor((new Date).getTime() )))
     return this.authenticationService.currentUser$.pipe(
       map(user => {
           
@@ -26,6 +27,8 @@ export class AuthorizationGuard implements CanActivate {
         {
           if (this.jwtHelper.isTokenExpired(user.token))
           {
+
+            //
             console.log("Guard info: token invalid");
             return false;
           }

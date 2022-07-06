@@ -36,6 +36,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatSelectModule } from '@angular/material/select';
 
 //
 @NgModule({
@@ -53,6 +54,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TeamHomeComponent,
   ],
   imports: [
+    MatSelectModule,
     MatProgressSpinnerModule,
     BrowserModule,
     MatNativeDateModule,
@@ -73,7 +75,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatInputModule,
     MatDialogModule ,
     MatDatepickerModule,
-    NgbModule
+    NgbModule,    
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function  tokenGetter() { 
+        return localStorage.getItem('token');
+        } 
+     }
+   })
   ],
   providers: [FormBuilder,
     {provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true}],
