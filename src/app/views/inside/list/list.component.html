@@ -1,0 +1,132 @@
+<div class="container">
+
+  <div class="row align-items-end">
+    <div class="col ">
+      <button mat-raised-button (click)="create()" class="demo-button">
+        Add Team
+      </button>
+    </div>
+    <form [formGroup]="form" id="test1">
+      <table mat-table [dataSource]="dataSource" formArrayName="PTasks">
+
+        <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+        <tr mat-row *matRowDef="let row; let i = index; columns: displayColumns;"></tr>
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> id </th>
+          <td (change)="testChange(row,index)" mat-cell *matCellDef="let row; let index = index"
+            [formGroupName]="index">
+            <mat-form-field class="classInput" appearance="outline">
+              <input matInput type="text" formControlName="id">
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="startDate">
+          <th mat-header-cell *matHeaderCellDef> startDate</th>
+          <td (change)="testChange(row,index)" mat-cell *matCellDef="let row; let index = index"
+            [formGroupName]="index">
+            <mat-form-field class="classInput" appearance="outline">
+              <input matInput [matDatepicker]="picker" formControlName="startDate">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="endDate">
+          <th mat-header-cell *matHeaderCellDef> endDate4 </th>
+          <td (change)="testChange(row,index)" mat-cell *matCellDef="let row; let index = index"
+            [formGroupName]="index">
+            <mat-form-field class="classInput" appearance="outline">
+              <input matInput [matDatepicker]="picker" formControlName="endDate">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> title </th>
+          <td (change)="testChange(row,index)" mat-cell *matCellDef="let row; let index = index"
+            [formGroupName]="index">
+
+            <mat-form-field class="classInput" appearance="outline">
+              <input matInput type="text" formControlName="title">
+            </mat-form-field>
+
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> description </th>
+          <td (change)="testChange(row,index)" mat-cell *matCellDef="let row; let index = index"
+            [formGroupName]="index">
+
+            <mat-form-field class="classInput" appearance="outline">
+              <input matInput type="text" formControlName="description">
+            </mat-form-field>
+
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="priorityId">
+          <th mat-header-cell *matHeaderCellDef> priorityId </th>
+          <td (change)="testChange(row,index)" mat-cell *matCellDef="let row; let index = index"
+            [formGroupName]="index">
+
+            <!-- <mat-form-field class="classInput" appearance="outline">
+              <input matInput type="text" formControlName="priorityId">
+            </mat-form-field> -->
+            <!-- <button class="dropdown-item" type="button">{{row.controls['priorityId'].value}}</button> -->
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{row.controls['priorityId'].value}}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button">Action</button>
+                <button class="dropdown-item" type="button">Another action</button>
+                <button class="dropdown-item" type="button">Something else here</button>
+              </div>
+            </div>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="stateId">
+          <th mat-header-cell *matHeaderCellDef> stateId </th>
+          <td (change)="testChange(row,index)" mat-cell *matCellDef="let row; let index = index"
+            [formGroupName]="index">
+
+            <mat-form-field class="classInput" appearance="outline">
+              <input matInput type="text" formControlName="stateId">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="teamId">
+          <th mat-header-cell *matHeaderCellDef> teamId </th>
+          <td (change)="testChange(row,index)" mat-cell *matCellDef="let row; let index = index"
+            [formGroupName]="index">
+            <mat-form-field class="classInput" appearance="outline">
+              <input matInput type="text" formControlName="teamId">
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+      </table>
+    </form>
+  </div>
+
+
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <button class="dropdown-item" type="button">Action</button>
+      <button class="dropdown-item" type="button">Another action</button>
+      <button class="dropdown-item" type="button">Something else here</button>
+    </div>
+  </div>
+  
+  <!-- <div>
+    <pre>{{ form.value | json }}</pre>
+  </div>
+</div> -->
