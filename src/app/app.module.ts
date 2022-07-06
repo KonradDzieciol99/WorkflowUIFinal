@@ -35,6 +35,7 @@ import { TeamHomeComponent } from './views/inside/team-home/team-home.component'
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //
 @NgModule({
@@ -71,7 +72,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatPaginatorModule ,
     MatInputModule,
     MatDialogModule ,
-    MatDatepickerModule
+    MatDatepickerModule,
+    NgbModule
   ],
   providers: [FormBuilder,
     {provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true}],
