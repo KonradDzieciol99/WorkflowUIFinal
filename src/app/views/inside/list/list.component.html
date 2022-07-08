@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container-fluid">
 
-  <div class="row align-items-end">
-    <div class="col ">
+  <div class="row somediv">
+    <div class="row">
       <button mat-raised-button (click)="create()" class="demo-button">
         Add Team
       </button>
     </div>
-    <form [formGroup]="form" id="test1">
-      <table mat-table [dataSource]="dataSource" formArrayName="PTasks">
+    <form class="row" [formGroup]="form" id="test1">
+      <table  mat-table [dataSource]="dataSource" formArrayName="PTasks">
 
         <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
         <tr mat-row *matRowDef="let row; let i = index; columns: displayColumns;"></tr>
@@ -108,6 +108,7 @@
         </ng-container>
       </table>
     </form>
+    </div>
   </div>
 
 

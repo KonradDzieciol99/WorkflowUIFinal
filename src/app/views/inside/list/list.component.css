@@ -7,7 +7,7 @@ max-height: 80vh;
 content: '';
 margin: auto;
 /* background-color: black; */
-/* justify-content: center; */
+/*  */
 /* position: relative; */
 /* justify-content: center; */
 /* align-items: center; */
@@ -15,10 +15,22 @@ margin: auto;
 /* overflow: scroll; */
 /* direction: rtl; */
 }
+.container-fluid{
+  width: 100%;
+  display: flex;
+  /* overflow: auto; */
+  justify-content: center;
+}
+.somediv{
+  overflow: auto;
+max-width: 90% !important;
+display: flex;
+max-height: 70vh;
+}
 .mat-table {
     /* min-width: 100%;*/
-    width: 100%; 
-    display: table;
+    /* width: 100%; 
+    display: table; */
 /* table-layout: fixed; */
 
     /* background-color: yellowgreen;
