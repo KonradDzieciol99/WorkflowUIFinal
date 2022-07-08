@@ -28,15 +28,16 @@ export interface TableData {
 })
 export class ListComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','symbol2'];
-  data2:PTask[]
+
+  StateTable:string[]=["ToDo","InProgress","Done"];
+
   data: TableData[] = [ { from: new Date(), to: new Date(),text:"some text" } ];
   dataSource = new BehaviorSubject<AbstractControl[]>([]);
   displayColumns = ['id', 'startDate', 'endDate','title', 'description', 'priorityId','stateId', 'teamId'];
   rows: FormArray = this.fb.array([]);
   form: FormGroup = this.fb.group({ PTasks: this.rows });
   currentTeam: Team;
-
+  
   constructor(private fb: FormBuilder,private pTaskService: PTaskService,private teamService: TeamService,public dialog: MatDialog, private route:Router) { 
 
   }
@@ -102,6 +103,20 @@ export class ListComponent implements OnInit {
       return 'fa-solid fa-bars fa-xl';
     } else if(value == 3){
       return 'fa-solid fa-angle-up fa-xl';
+    }
+      throw new Error('GetIconPriorityId internal error');
+  }
+  GetIconStateId(value:number): string
+  {
+    //1=ToDo
+    //2=In Progress
+    //3=Done
+    if (value==1) {
+      return 'ToDo';
+    } else if (value == 2) {
+      return 'InProgress';
+    } else if(value == 3){
+      return 'Done';
     }
       throw new Error('GetIconPriorityId internal error');
   }
