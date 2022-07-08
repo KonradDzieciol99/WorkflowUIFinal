@@ -9,6 +9,7 @@ import { PTask } from '../models/PTask.model';
 export class PTaskService {
 
 
+
   constructor(private http: HttpClient) { }
 
   GetAllByTeamId(id:number) {
@@ -17,4 +18,6 @@ export class PTaskService {
   createPTask(prePTask:PTask) {
     return this.http.post<PTask>('api/PTasks/CreatePTask',prePTask);
   }
-}
+  updatePTask(updatePTask: PTask) {
+    return this.http.put<PTask>('api/PTasks/UpdatePTask',updatePTask);  }
+  }

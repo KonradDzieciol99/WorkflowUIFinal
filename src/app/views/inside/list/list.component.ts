@@ -42,7 +42,6 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.teamService.currentTeam$.subscribe(res=>{this.currentTeam=res;}) ;
 
     //this.data2.forEach((d: PTask) => this.addRow(d, false));
@@ -55,68 +54,58 @@ export class ListComponent implements OnInit {
     });
     });
     const myFormArray = <FormArray>this.form.get("PTasks");
-    // myFormArray.controls
 
-    //     myFormArray.controls.forEach(control=>{
-    //   control.valueChanges.subscribe(value => console.log(value));
-    // });
-
-    // myFormArray.valueChanges.pipe(map((z:AbstractControl, index: number)=> ({ rowIndex: index,control: z})  ))
-    // .subscribe(res=>console.log(res));
-
-    // myFormArray.valueChanges.subscribe(res=>console.log(res));
-    
-
-
-    // controls.forEach(control=>{
-    //   control.valueChanges.subscribe(value => console.log(value));
-    // });
-    
-    // .map((control: AbstractControl, index: number)=>
-    // control.valueChanges.subscribe(changes => {
-    // console.log(changes,"plus index", index);
-    // }));
-
-
-
-    //formGroupName
-    //console.log(myFormArray);
-
-
-
-
-    
-  //   .valueChanges.pipe().
-  //   subscribe((value) => {
-  //     console.log("myFormArrayvalue = ",value);
-  //  });
-  //  const myFormArray2 = <FormArray>this.form.get("dates");
-  //  console.log(myFormArray2);
-   //<FormArray>this.form.get("dates").
-  //   this.form.valueChanges.subscribe((value:FormGroup) => {
-  //     console.log("form = ",
-  //                 JSON.stringify(value));
-  //  });
-   //merge
-   //merge(myFormArray.controls.map(control=>{control.valueChanges})).subscribe(res=>console.log(res));
-  //  .subscribe((value:FormGroup) => {
-  //   console.log("form = ",
-  //               JSON.stringify(value));
-//  });
-   //console.log(myFormArray,"myFormArray")
   }
 
   
   testChange(row:FormGroup,index:number){
-    console.log(index,row);
-    console.log(row.controls['priorityId'].value,"priorityId")
 
-    const myFormArray = <FormArray>this.form.get("PTasks");
-    console.log(myFormArray.controls)
-    
-    this.rows.push(row);
-    this.dataSource.subscribe(val=>console.log(val,"dataSource"))
+    if(!row.valid){return;}
+ 
+    let updatePTask:PTask = {
+      teamId: this.currentTeam.id,
+      id: 0,
+      startDate: undefined,
+      endDate: undefined,
+      title: '',
+      description: '',
+      priorityId: 0,
+      stateId: 0,
+      Performer: undefined
+    }
+
+    console.log(row.controls ,"row.controls")
+    Object.keys(row.controls).forEach(key => {
+      // console.log(key)
+      // row.get(key).markAsDirty();
+      if (key=="id") {updatePTask.id=row.get(key).value;}
+      if (key=="startDate") {updatePTask.startDate=row.get(key).value;}
+      if (key=="endDate") {updatePTask.endDate=row.get(key).value;}
+      if (key=="title") {updatePTask.title=row.get(key).value;}
+      if (key=="description") {updatePTask.description=row.get(key).value;}
+      if (key=="priorityId") {updatePTask.priorityId=row.get(key).value;}
+      if (key=="stateId") {updatePTask.stateId=row.get(key).value;}
+      if (key=="teamId") {updatePTask.teamId=row.get(key).value;}
+    });
+
+    this.pTaskService.updatePTask(updatePTask).subscribe();
+    this.dataSource.subscribe(res=>console.log(res))
   }
+  GetIconPriorityId(value:number): string
+  {
+    //1=low
+    //2=medium
+    //3=high
+    if (value==1) {
+      return 'fa-solid fa-angle-down fa-xl';
+    } else if (value == 2) {
+      return 'fa-solid fa-bars fa-xl';
+    } else if(value == 3){
+      return 'fa-solid fa-angle-up fa-xl';
+    }
+      throw new Error('GetIconPriorityId internal error');
+  }
+
   emptyTable() {
     while (this.rows.length !== 0) {
       this.rows.removeAt(0);
@@ -143,11 +132,11 @@ export class ListComponent implements OnInit {
         "id" : [d.id,[Validators.required]],
         "startDate":[d.startDate,[Validators.required]],
         "endDate": [d.endDate,[Validators.required]],
-        "title": [d.title,[Validators.required]],
-        "description": [d.description,[Validators.required]],
-        "priorityId": [d.priorityId,[Validators.required]],
-        "stateId": [d.stateId,[Validators.required]],
-        "teamId": [d.teamId,[Validators.required]],
+        "title": [d.title,[]],
+        "description": [d.description,[]],
+        "priorityId": [d.priorityId.toString(),[Validators.required]],
+        "stateId": [d.stateId.toString(),[Validators.required]],
+        "teamId": [d.teamId.toString(),[Validators.required]],
     });
 
     // const row = this.fb.group({

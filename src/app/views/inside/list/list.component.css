@@ -1,40 +1,16 @@
-
-.mat-table{
-    /* overflow: auto;
-    
-    /* table-layout: fixed !important; */
-    /* max-width: 40px !important; */
-    /* width: 10%; */
-}
-
 .container{
 overflow: auto;
 max-width: 90% !important;
 }
 table {
     width: 100%;
-    
-  }
-  
-  /* .mat-row .mat-cell {
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid transparent;
-    cursor: pointer;
-  } */
-  
-  /* .mat-row:hover .mat-cell {
-    border-color: currentColor;
-    background-color: rgb(209, 206, 206);
-  } */
+}
 .mat-column {
     flex: none;
     width: 10px;
 }
 .mat-table .mat-cell {
   border: 1px solid;
-
-  /* max-width: 800px !important; */
-
 }
 .classInput{
 width: 100%;
@@ -55,18 +31,12 @@ padding: 0 !important;
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
   padding: 1em 0 1.5em 0;
 }/*Wyskokosc lini z tekstem w inpucie*/
-
-  /* .demo-row-is-clicked {
-    font-weight: bold;
-  } */
-  
-/* .xxx{
-    min-height: 600px;
-    max-width: 200px;
-    overflow: hidden;
-} */
-/* .epokalodowcowa{
-    width: 80%;
-    overflow: auto;
-
-} */
+.fa-bars{
+  color: #ffc107;
+}
+.fa-angle-down{
+  color: rgb(33, 104, 198);
+}
+.fa-angle-up{
+color: rgb(148, 15, 42);
+}
