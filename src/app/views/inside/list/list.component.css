@@ -83,3 +83,6 @@ color: rgb(148, 15, 42);
   text-transform: uppercase;
   vertical-align: baseline;
 }
+.idCell{
+  padding-right: 24px;
+}

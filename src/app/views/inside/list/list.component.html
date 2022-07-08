@@ -14,11 +14,16 @@
 
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> id </th>
-          <td (change)="testChange(row,index)" mat-cell *matCellDef="let row; let index = index"
+          <td class="idCell" (change)="testChange(row,index)" mat-cell *matCellDef="let row; let index = index"
             [formGroupName]="index">
-            <mat-form-field class="classInput" appearance="outline">
+            <!-- <mat-form-field class="classInput" appearance="outline">
               <input matInput type="text" formControlName="id">
-            </mat-form-field>
+            </mat-form-field> -->
+
+            <a class="link-secondary">{{row.controls['id'].value}}</a>
+
+            
+            
           </td>
         </ng-container>
 
