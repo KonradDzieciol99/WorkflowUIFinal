@@ -1,36 +1,103 @@
 .container{
+  /* margin: 0 auto; */
 overflow: auto;
 max-width: 90% !important;
+display: flex;
+max-height: 80vh;
+content: '';
+margin: auto;
+/* background-color: black; */
+/* justify-content: center; */
+/* position: relative; */
+/* justify-content: center; */
+/* align-items: center; */
+/* white-space: nowrap; */
+/* overflow: scroll; */
+/* direction: rtl; */
 }
-table {
-    width: 100%;
+.mat-table {
+    /* min-width: 100%;*/
+    width: 100%; 
+    display: table;
+/* table-layout: fixed; */
+
+    /* background-color: yellowgreen;
+    overflow: scroll; */
 }
-.mat-column {
+/* .mat-column {
     flex: none;
     width: 10px;
-}
+} */
 .mat-table .mat-cell {
   border: 1px solid;
-}
-.classInput{
-width: 100%;
-height: 100%;
-padding: 0 !important;
-/* line-height: 1em; */
-}
-::ng-deep .mat-form-field-wrapper{
-  margin-bottom: 0em;
-  padding-bottom: 0em;
-  margin: 0em;
+  max-height: 5px;
 }
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
-  margin: 0.0em !important;
+  margin: 0 !important;
+}
+::ng-deep .mat-form-field-wrapper{
+  margin: 0;
+  padding: 0;
+  margin: 0;
+}
+/* ::ng-deep .mat-form-field .startDatefield{
+  width: 13px !important;
+  background-color: #006644;
+} */
+
+::ng-deep .mat-form-field-appearance-outline{
+  /* height: 300px !important; */
+  width: 100%;
+}
+.mat-column-startDate{
+  /* flex: 0 0 10%; */
+  /* background-color: #006644; */
+  /* max-width:  130px; */
+} 
+
+::ng-deep .startDatefield .mat-form-field-infix {
+  /* height: 25px; */
+  /* font-size: 12px; */
+  max-width: 75px !important;
+  /* width: 100%; */
+} /* it work fine odpowiada za odległość okony kalendarza od daty*/
+
+::ng-deep .endDatefield .mat-form-field-infix {
+
+  max-width: 75px !important;
+}
+::ng-deep .endDatefield .mat-form-field-infix {
+
+  max-width: 75px !important;
+}
+::ng-deep .priorityId .mat-form-field-infix {
+
+  max-width: 80px !important;
 }
 
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
-  padding: 1em 0 1.5em 0;
-}/*Wyskokosc lini z tekstem w inpucie*/
+
+
+
+/* ::ng-deep .mat-form-field {
+  width: 100%;
+  height: 100% !important;;
+  }
+  ::ng-deep .mat-form-field-infix {
+    height: 25px;
+    font-size: 12px;
+} */
+/* ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+   margin: 0.0em !important; 
+} */
+
+/* ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+   padding: 1em 0 1.5em 0;
+
+}Wyskokosc lini z tekstem w inpucie */
+/* ::ng-deep .this-feels-better div.mat-input-wrapper.mat-form-field-wrapper{
+  padding-bottom:20;
+} */
 .fa-bars{
   color: #ffc107;
 }
@@ -86,3 +153,13 @@ color: rgb(148, 15, 42);
 .idCell{
   padding-right: 24px;
 }
+.startDateInput{
+  background-color: #DFE1E6 !important;
+}
+/* .kurka{
+  display: block;
+} */
+/* .startDateField{
+  width: 120px;
+  height: 100% !important;
+} */

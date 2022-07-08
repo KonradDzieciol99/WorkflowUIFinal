@@ -33,7 +33,7 @@ export class ListComponent implements OnInit {
 
   data: TableData[] = [ { from: new Date(), to: new Date(),text:"some text" } ];
   dataSource = new BehaviorSubject<AbstractControl[]>([]);
-  displayColumns = ['id', 'startDate', 'endDate','title', 'description', 'priorityId','stateId', 'teamId'];
+  displayColumns = ['id', 'startDate', 'endDate','title', 'priorityId','stateId'];
   rows: FormArray = this.fb.array([]);
   form: FormGroup = this.fb.group({ PTasks: this.rows });
   currentTeam: Team;
