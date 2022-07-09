@@ -9,8 +9,16 @@
     <form class="row" [formGroup]="form" id="test1">
       <table  mat-table [dataSource]="dataSource" formArrayName="PTasks">
 
-        <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayColumns;sticky: true"></tr>
         <tr mat-row *matRowDef="let row; let i = index; columns: displayColumns;"></tr>
+        <tr mat-footer-row *matFooterRowDef="['disclaimer']" class="example-second-footer-row"></tr>
+
+          <!-- Disclaimer column -->
+  <ng-container matColumnDef="disclaimer">
+    <td mat-footer-cell *matFooterCellDef colspan="6">
+      Please note that the cost of items displayed are completely and totally made up.
+    </td>
+  </ng-container>
 
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> id </th>
