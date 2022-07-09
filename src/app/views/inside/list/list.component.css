@@ -10,26 +10,27 @@ display: flex;
 max-height: 80vh;
 content: '';
 margin: auto;
-/* background-color: black; */
-/*  */
-/* position: relative; */
-/* justify-content: center; */
-/* align-items: center; */
-/* white-space: nowrap; */
-/* overflow: scroll; */
-/* direction: rtl; */
 }
 .container-fluid{
-  width: 100%;
-  display: flex;
+  min-width: 100%;
+  /* display: flex; */
   /* overflow: auto; */
-  justify-content: center;
+  /* justify-content: center; */
 }
 .somediv{
   overflow: auto;
-max-width: 90% !important;
+/* max-width: 90% !important; */
 display: flex;
+/* justify-content: center; */
 max-height: 70vh;
+min-height: 30px;
+}
+
+.somediv23{
+max-width: 90% !important;
+/* display: flex; */
+/* justify-content: center; */
+
 }
 
 /* .mat-table-sticky {
@@ -48,10 +49,18 @@ th.mat-header-cell {
   border-left: 1px solid  rgba(0,0,0,.12);
   text-align: center;
 }
+
+.testSticky{
+  background-color: #006644;
+  width: 100%;
+}
 /* rgba(0,0,0,.12); */
+form{
+  width: 100%;
+}
 .mat-table {
   border-collapse: separate;
-  min-height: 100%;
+  min-width: 100%;
     /* min-width: 100%;*/
     /* width: 100%; 
     display: table; */

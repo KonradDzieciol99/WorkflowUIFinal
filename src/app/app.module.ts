@@ -37,6 +37,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatSelectModule } from '@angular/material/select';
+import { TestComponent } from './test/test/test.component';
 
 //
 @NgModule({
@@ -52,6 +53,7 @@ import { MatSelectModule } from '@angular/material/select';
     CreateTeamComponent,
     ListComponent,
     TeamHomeComponent,
+    TestComponent,
   ],
   imports: [
     MatSelectModule,

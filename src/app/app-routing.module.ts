@@ -4,6 +4,7 @@ import { AuthorizationGuard } from './guards/authorization.guard';
 import { AuthComponent } from './layouts/auth/auth.component';
 import { InsideComponent } from './layouts/inside/inside.component';
 import { TeamHomeResolver } from './resolvers/team-home.resolver';
+import { TestComponent } from './test/test/test.component';
 import { LoginComponent } from './views/auth/login/login.component';
 import { RegisterComponent } from './views/auth/register/register.component';
 import { DashboardComponent } from './views/inside/dashboard/dashboard.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
       children:[
         { path: "dashboard", component: DashboardComponent},
         { path: "list", component: ListComponent},
+        { path: "TestComponent", component: TestComponent},
         { path: "", redirectTo: "dashboard", pathMatch: "full" },
 
         
