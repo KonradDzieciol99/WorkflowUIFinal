@@ -14,23 +14,37 @@ margin: auto;
 .container-fluid{
   min-width: 100%;
   display: flex;
-  overflow: auto;
+  min-height: 100vh;
+  /* overflow: scroll; */
   justify-content: center;
 }
 .add-button{
   min-width: 100%;
+  border-radius:0px !important;
+  
+
+}
+.somediv2xxxx{
+  border-radius: 9px !important ;
+  /* border-radius: 50px !important ; */
+  overflow: hidden;
 }
 .somediv{
+  background-color: #006644;
   overflow: auto;
 /* max-width: 90% !important; */
 display: flex;
 /* justify-content: center; */
 max-height: 70vh;
 min-height: 30px;
+/* border-radius:50% !important ; */
+
+/* tu daiła radius */
 }
 
 .somediv23{
-max-width: 90% !important;
+max-width: 90%;
+/* border-radius: 8px !important ; */
 /* display: flex; */
 /* justify-content: center; */
 
@@ -54,7 +68,6 @@ th.mat-header-cell {
 }
 
 .testSticky{
-  background-color: #006644;
   width: 100%;
 }
 /* rgba(0,0,0,.12); */
