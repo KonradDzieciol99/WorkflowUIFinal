@@ -5,8 +5,8 @@
   <div class="somediv23">
 
     <div class="somediv">
-      <form [formGroup]="form" id="test1">
-        <table mat-table [dataSource]="dataSource" formArrayName="PTasks">
+      <form  [formGroup]="form" id="test1">
+        <table  mat-table [dataSource]="dataSource" formArrayName="PTasks">
 
           <tr mat-header-row *matHeaderRowDef="displayColumns;sticky: true"></tr>
           <tr mat-row *matRowDef="let row; let i = index; columns: displayColumns;"></tr>
@@ -109,19 +109,29 @@
                   <mat-option value="3"> <span class="Done">Done</span> </mat-option>
                 </mat-select>
               </mat-form-field>
-
             </td>
           </ng-container>
+                <!-- wypełniacz filler  -->
+
+              <ng-container matColumnDef="filler">
+                <th mat-header-cell *matHeaderCellDef> filler </th>
+                <td class="idCell"  mat-cell *matCellDef="let row; let index = index">
+
+                </td>
+
+              </ng-container>
+
+
         </table>
       </form>
     </div>
 
-    <div class="testSticky">  d
-      <!-- <div class="row">
-      <button mat-raised-button (click)="create()" class="demo-button">
+    <div class="testSticky">
+      <div>
+      <button mat-raised-button (click)="create()" class="add-button">
         Add Team
       </button>
-    </div> -->
+    </div>
     </div>
 
   </div>

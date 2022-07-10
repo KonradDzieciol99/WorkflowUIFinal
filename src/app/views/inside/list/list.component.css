@@ -13,9 +13,12 @@ margin: auto;
 }
 .container-fluid{
   min-width: 100%;
-  /* display: flex; */
-  /* overflow: auto; */
-  /* justify-content: center; */
+  display: flex;
+  overflow: auto;
+  justify-content: center;
+}
+.add-button{
+  min-width: 100%;
 }
 .somediv{
   overflow: auto;
