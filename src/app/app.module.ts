@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthComponent } from './layouts/auth/auth.component';
 import { InsideComponent } from './layouts/inside/inside.component';
 import { RegisterComponent } from './views/auth/register/register.component';
-import { DashboardComponent } from './views/inside/dashboard/dashboard.component';
+import { DashboardComponent } from './views/inside/team-home/dashboard/dashboard.component';
 import { LoginComponent } from './views/auth/login/login.component';
 import { InsideTopnavbarComponent } from './components/navbars/inside-topnavbar/inside-topnavbar.component';
 import { JwtModule } from "@auth0/angular-jwt";
@@ -30,14 +30,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TeamService } from './services/team.service';
 import { CreateTeamComponent } from './components/dialogs/create-team/create-team.component';
-import { ListComponent } from './views/inside/list/list.component';
-import { TeamHomeComponent } from './views/inside/team-home/team-home.component';
+import { ListComponent } from './views/inside/team-home/list/list.component';
+import { TeamHomeComponent } from './layouts/team-home/team-home.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatSelectModule } from '@angular/material/select';
 import { TestComponent } from './test/test/test.component';
+import { PeopleComponent } from './views/inside/people/people.component';
 
 //
 @NgModule({
@@ -54,6 +55,7 @@ import { TestComponent } from './test/test/test.component';
     ListComponent,
     TeamHomeComponent,
     TestComponent,
+    PeopleComponent,
   ],
   imports: [
     MatSelectModule,
