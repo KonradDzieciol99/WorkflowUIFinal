@@ -1,9 +1,11 @@
 <div class="container-fluid">
-  <!-- <div class="col-12"> -->
-    <!-- <div class="Content">
-      sdfdasda
-    </div> -->
-    <div class="BaseTable">
+  <div class="row g-0 ">
+    <div class="col-5 g-0 ">
+    sdfdasda
+    </div>
+  </div>
+  <div class="row g-0 justify-content-center  " >
+    <div class="col-10 g-0 BaseTable">
       <div class="Table">
         <form [formGroup]="form" id="test1">
           <table mat-table [dataSource]="dataSource" formArrayName="PTasks">
@@ -85,7 +87,7 @@
               <td (change)="testChange(row,index)" mat-cell *matCellDef="let row; let index = index"
                 [formGroupName]="index">
 
-                <mat-form-field appearance="outline">
+                <mat-form-field class="stateIdField" appearance="outline">
                   <mat-select (selectionChange)="testChange(row,index)" formControlName="stateId">
 
                     <mat-select-trigger>
@@ -125,22 +127,11 @@
         </div>
       </div>
     </div>
-  <!-- </div> -->
-</div>
-
-<!-- <div class="container-fluid">
-  <div class="somediv">
-    <div class="testSticky">asdasdasdasd</div>
   </div>
-</div> -->
-<!-- <mat-form-field appearance="outline">
-    <mat-select>
-      <mat-option value="option1">Option 1</mat-option>
-      <mat-option value="option2">Option 2</mat-option>
-      <mat-option value="option3">Option 3</mat-option>
-    </mat-select>
-  </mat-form-field>
-   -->
+</div>
+<!-- one chyba zostają tylko flex bez col w row -->
+<!-- g-0 odpowiada za brak paddingu -->
+
 <!-- <div>
     <pre>{{ form.value | json }}</pre>
   </div>

@@ -1,10 +1,42 @@
+
+
 .Content{
 
 }
+.mat-column-startDate {
+  /* word-wrap: break-word !important;
+  white-space: unset !important; */
+  /* flex: 0 0 1% !important; */
+  width: 1% !important;
+  /* overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto; */
+}
+.mat-column-endDate {
+  width: 1% !important;
+}
+.mat-column-priorityId {
+  width: 1% !important;
+}
+.mat-column-id {
+  width: 1% !important;
+}
+.mat-column-stateId {
+  width: 1% !important;
+}
+.mat-column-title {
+  width: 22% !important;
+}
 .container-fluid{
   min-width: 100%;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   /* flex-direction: column; */
   padding: 10px;
   background-color: #0747A6;
@@ -17,20 +49,26 @@
   background-color: #006644;
   overflow: auto;
   max-height: 65vh;
-
 }
 .BaseTable{
-max-width: 90%;
+/* max-width: 90%; */
 border-radius: 10px !important ;
 overflow: hidden;
+/* justify-content: center; */
 }
 th.mat-header-cell:first-child {
   border-left: none;
+  /* max-width: 5px !important; */
 }
 th.mat-header-cell {
   border-left: 1px solid  rgba(0,0,0,.12);
   text-align: center;
 }
+td.mat-cell{
+  /* max-width: 6px !important; */
+  /* background-color: #006644; */
+}
+
 .Footer{
   width: 100%;
 }
@@ -53,20 +91,20 @@ th.mat-header-cell {
 } 
 
 ::ng-deep .startDatefield .mat-form-field-infix {
-  max-width: 75px !important;
+  max-width: 85px !important;
 } /* it work fine odpowiada za odległość okony kalendarza od daty*/
 
-::ng-deep .endDatefield .mat-form-field-infix {
+::ng-deep .stateIdField .mat-form-field-infix {
 
-  max-width: 75px !important;
+  max-width: 125px !important;
 }
 ::ng-deep .endDatefield .mat-form-field-infix {
 
-  max-width: 75px !important;
+  max-width: 85px !important;
 }
 ::ng-deep .priorityId .mat-form-field-infix {
 
-  max-width: 80px !important;
+  max-width: 100px !important;
 }
 
 .fa-bars{
