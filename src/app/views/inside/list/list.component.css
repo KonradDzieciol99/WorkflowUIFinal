@@ -16,6 +16,8 @@
 .Table{
   background-color: #006644;
   overflow: auto;
+  max-height: 65vh;
+
 }
 .BaseTable{
 max-width: 90%;
