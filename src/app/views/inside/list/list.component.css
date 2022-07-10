@@ -1,70 +1,27 @@
-tr.mat-row {
-  /* row border */
-  border-top: 1px solid #ffa600;
-}
-.container{
-  /* margin: 0 auto; */
-overflow: auto;
-max-width: 90% !important;
-display: flex;
-max-height: 80vh;
-content: '';
-margin: auto;
+.Content{
+
 }
 .container-fluid{
   min-width: 100%;
   display: flex;
-  /* min-height: 100vh; */
-  /* overflow: scroll; */
   justify-content: center;
+  /* flex-direction: column; */
   padding: 10px;
   background-color: #0747A6;
 }
 .add-button{
   min-width: 100%;
   border-radius:0px !important;
-  
-
-}
-.somediv2xxxx{
-  border-radius: 9px !important ;
-  /* border-radius: 50px !important ; */
-  overflow: hidden;
 }
 .Table{
   background-color: #006644;
   overflow: auto;
-
-  /* overflow: auto; */
-/* max-width: 90% !important; */
-/* display: flex; */
-/* justify-content: center; */
-max-height: 70vh;
-min-height: 30px;
-/* border-radius:50% !important ; */
-
-/* tu daiła radius */
 }
-
 .BaseTable{
 max-width: 90%;
 border-radius: 10px !important ;
 overflow: hidden;
-
-/* display: flex; */
-/* justify-content: center; */
-
 }
-
-/* .mat-table-sticky {
-  border: 1px solid  #0747A6;
-  outline: solid black;
-  /* border-top: 1px solid #ffa600; */
-  /* td.mat-header-cell:first-child {
-    border-left: 1px solid #ffa600;
-  } */
-
-
 th.mat-header-cell:first-child {
   border-left: none;
 }
@@ -72,34 +29,13 @@ th.mat-header-cell {
   border-left: 1px solid  rgba(0,0,0,.12);
   text-align: center;
 }
-
 .Footer{
   width: 100%;
-}
-/* rgba(0,0,0,.12); */
-form{
-  /* overflow: hidden; */
 }
 .mat-table {
   border-collapse: separate;
   min-width: 100%;
-    /* min-width: 100%;*/
-    /* width: 100%; 
-    display: table; */
-/* table-layout: fixed; */
-
-    /* background-color: yellowgreen;
-    overflow: scroll; */
 }
-/* .mat-column {
-    flex: none;
-    width: 10px;
-} */
-/* .mat-table .mat-cell {
-  border: 1px solid;
-  max-height: 5px;
-} */
-
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
   margin: 0 !important;
 }
@@ -108,26 +44,14 @@ form{
   padding: 0;
   margin: 0;
 }
-/* ::ng-deep .mat-form-field .startDatefield{
-  width: 13px !important;
-  background-color: #006644;
-} */
-
 ::ng-deep .mat-form-field-appearance-outline{
-  /* height: 300px !important; */
   width: 100%;
 }
 .mat-column-startDate{
-  /* flex: 0 0 10%; */
-  /* background-color: #006644; */
-  /* max-width:  130px; */
 } 
 
 ::ng-deep .startDatefield .mat-form-field-infix {
-  /* height: 25px; */
-  /* font-size: 12px; */
   max-width: 75px !important;
-  /* width: 100%; */
 } /* it work fine odpowiada za odległość okony kalendarza od daty*/
 
 ::ng-deep .endDatefield .mat-form-field-infix {
@@ -143,28 +67,6 @@ form{
   max-width: 80px !important;
 }
 
-
-
-
-/* ::ng-deep .mat-form-field {
-  width: 100%;
-  height: 100% !important;;
-  }
-  ::ng-deep .mat-form-field-infix {
-    height: 25px;
-    font-size: 12px;
-} */
-/* ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
-   margin: 0.0em !important; 
-} */
-
-/* ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
-   padding: 1em 0 1.5em 0;
-
-}Wyskokosc lini z tekstem w inpucie */
-/* ::ng-deep .this-feels-better div.mat-input-wrapper.mat-form-field-wrapper{
-  padding-bottom:20;
-} */
 .fa-bars{
   color: #ffc107;
 }
@@ -223,10 +125,3 @@ color: rgb(148, 15, 42);
 .startDateInput{
   background-color: #DFE1E6 !important;
 }
-/* .kurka{
-  display: block;
-} */
-/* .startDateField{
-  width: 120px;
-  height: 100% !important;
-} */
