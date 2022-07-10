@@ -1,10 +1,11 @@
 <div class="container-fluid">
   <div class="row g-0 ">
     <div class="col-5 g-0 ">
-    sdfdasda
+      <h4>Team / {{ (currentTeam$ | async)?.name }}</h4>
+      <h2>List</h2>
     </div>
   </div>
-  <div class="row g-0 justify-content-center  " >
+  <div class="row g-0 justify-content-center  ">
     <div class="col-10 g-0 BaseTable">
       <div class="Table">
         <form [formGroup]="form" id="test1">

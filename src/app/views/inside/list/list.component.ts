@@ -5,7 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { BehaviorSubject, concatWith, map, merge, mergeMap, subscribeOn } from 'rxjs';
+import { BehaviorSubject, concatWith, map, merge, mergeMap, Observable, subscribeOn } from 'rxjs';
 import { CreateTeamComponent } from 'src/app/components/dialogs/create-team/create-team.component';
 import { PTask } from 'src/app/models/PTask.model';
 import { Team } from 'src/app/models/Team.model';
@@ -37,14 +37,14 @@ export class ListComponent implements OnInit {
   rows: FormArray = this.fb.array([]);
   form: FormGroup = this.fb.group({ PTasks: this.rows });
   currentTeam: Team;
-  
+  currentTeam$: Observable<Team>;
   constructor(private fb: FormBuilder,private pTaskService: PTaskService,private teamService: TeamService,public dialog: MatDialog, private route:Router) { 
 
   }
 
   ngOnInit() {
     this.teamService.currentTeam$.subscribe(res=>{this.currentTeam=res;}) ;
-
+    this.currentTeam$=this.teamService.currentTeam$
     //this.data2.forEach((d: PTask) => this.addRow(d, false));
     this.updateView();
 
