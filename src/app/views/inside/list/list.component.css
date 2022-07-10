@@ -14,9 +14,11 @@ margin: auto;
 .container-fluid{
   min-width: 100%;
   display: flex;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* overflow: scroll; */
   justify-content: center;
+  padding: 10px;
+  background-color: #0747A6;
 }
 .add-button{
   min-width: 100%;
@@ -29,11 +31,13 @@ margin: auto;
   /* border-radius: 50px !important ; */
   overflow: hidden;
 }
-.somediv{
+.Table{
   background-color: #006644;
   overflow: auto;
+
+  /* overflow: auto; */
 /* max-width: 90% !important; */
-display: flex;
+/* display: flex; */
 /* justify-content: center; */
 max-height: 70vh;
 min-height: 30px;
@@ -42,9 +46,11 @@ min-height: 30px;
 /* tu daiła radius */
 }
 
-.somediv23{
+.BaseTable{
 max-width: 90%;
-/* border-radius: 8px !important ; */
+border-radius: 10px !important ;
+overflow: hidden;
+
 /* display: flex; */
 /* justify-content: center; */
 
@@ -67,12 +73,12 @@ th.mat-header-cell {
   text-align: center;
 }
 
-.testSticky{
+.Footer{
   width: 100%;
 }
 /* rgba(0,0,0,.12); */
 form{
-  width: 100%;
+  /* overflow: hidden; */
 }
 .mat-table {
   border-collapse: separate;
