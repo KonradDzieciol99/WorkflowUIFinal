@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { DialogPosition, MatDialog } from '@angular/material/dialog';
 import { InviteUserDialogComponent } from 'src/app/components/dialogs/invite-user-dialog/invite-user-dialog.component';
 
 @Component({
@@ -17,10 +17,19 @@ export class PeopleComponent implements OnInit {
   {
     this.openDialog();
   }
+  // const positionStrategy = this.overlay.position()
+  // .global()
+  // .centerHorizontally()
+  // .centerVertically();
   openDialog(): void {
+    const dialogPosition: DialogPosition = {
+      top: '35%',
+      // left: 'px'
+    };
     const dialogRef = this.dialog.open(InviteUserDialogComponent, {
       width: '300px',
-      maxHeight: '70vh'
+      maxHeight: '70vh',
+      position: dialogPosition
     });
 
     dialogRef.afterClosed().subscribe(()=>{ })

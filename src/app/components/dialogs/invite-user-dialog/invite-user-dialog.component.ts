@@ -16,7 +16,7 @@ import { InvitedUser } from 'src/app/models/InvitedUser.model';
 export class InviteUserDialogComponent implements OnInit {
 
   private searchTerms = new Subject<string>();
-
+  selectedUser:InvitedUser;
   public isSelected = false;
   public resoultExsit:string='';
   InvitedUsers$ = new Observable<InvitedUser[]>;
@@ -60,11 +60,11 @@ export class InviteUserDialogComponent implements OnInit {
     // console.log("wp");
     this.dialogRef.close();
   }
-  selectedUser:InvitedUser;
-  // isSelected =false
+
   select(invitedUser:InvitedUser):void
   {
     this.selectedUser=invitedUser;
-    this.isSelected=!this.isSelected;
+    this.form.controls['SearchField'].setValue('');
+    // this.isSelected=!this.isSelected;
   }
 }
