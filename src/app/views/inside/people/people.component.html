@@ -1,8 +1,14 @@
 <div class="row">
     <div class="col-4 People">
-        <button mat-button color="accent">Add people</button>
-        <button mat-flat-button>Basic</button>
 
+        <div class="row">
+            <button mat-raised-button (click)="addPerson()" class="btn btn-success"><i class="fa-solid fa-user-plus"></i> Add people</button>
+        </div>
+        <div class="row">
+            <mat-form-field>
+                <input matInput type="text" placeholder="Filter">
+            </mat-form-field>
+        </div>
         <p>Add people (wyskakuje dialog)</p>
         <p>poniżej lista wszystkich ludzi którzy zakceptowali</p>
 
@@ -17,5 +23,3 @@
 
     </div>
 </div>
-
-

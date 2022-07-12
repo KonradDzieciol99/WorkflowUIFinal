@@ -1,0 +1,22 @@
+<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1> -->
+<div mat-dialog-content [formGroup]="form">
+    <p>Podaj email uzytkownika aby go dodać</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Team name</mat-label>
+      <input matInput formControlName="SearchField">
+    </mat-form-field>
+    <!-- <ng-container *ngIf="(InvitedUsers$ | async)?.length"> -->
+      <!-- alert alert-danger *ngIf=" InvitedUsers$ | async"-->
+    <div [ngClass]="[resoultExsit]">
+      <ul class="search-result">
+        <li *ngFor="let user of InvitedUsers$ | async" >
+            {{user.email}}
+        </li>
+      </ul>
+    <!-- </ng-container> -->
+   </div>
+  </div>
+  <div mat-dialog-actions>
+    <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
+    <!-- <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial>Ok</button> -->
+  </div>
