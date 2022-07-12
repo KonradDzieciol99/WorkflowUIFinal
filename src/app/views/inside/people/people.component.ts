@@ -19,11 +19,14 @@ export class PeopleComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(InviteUserDialogComponent, {
-      width: '250px'
+      width: '300px',
+      maxHeight: '70vh'
     });
 
     dialogRef.afterClosed().subscribe(()=>{ })
 
   }
+
+
 
 }

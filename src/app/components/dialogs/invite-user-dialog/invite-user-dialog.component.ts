@@ -17,6 +17,7 @@ export class InviteUserDialogComponent implements OnInit {
 
   private searchTerms = new Subject<string>();
 
+  public isSelected = false;
   public resoultExsit:string='';
   InvitedUsers$ = new Observable<InvitedUser[]>;
   constructor(private invitedUserService : InvitedUserService ,public dialogRef: MatDialogRef<InviteUserDialogComponent>,) { }
@@ -48,6 +49,7 @@ export class InviteUserDialogComponent implements OnInit {
       }
     })
     
+
     // .subscribe(val=>{
     //   this.InvitedUsers$=this.invitedUserService.FindUser(val);
     //   console.log(val);
@@ -55,6 +57,14 @@ export class InviteUserDialogComponent implements OnInit {
   }
 
   onNoClick(): void {
+    // console.log("wp");
     this.dialogRef.close();
+  }
+  selectedUser:InvitedUser;
+  // isSelected =false
+  select(invitedUser:InvitedUser):void
+  {
+    this.selectedUser=invitedUser;
+    this.isSelected=!this.isSelected;
   }
 }
