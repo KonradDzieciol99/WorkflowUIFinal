@@ -7,7 +7,7 @@
     </mat-form-field>
     <!-- <ng-container *ngIf="(InvitedUsers$ | async)?.length"> -->
       <!-- alert alert-danger *ngIf=" InvitedUsers$ | async"-->
-    <div [ngClass]="[resoultExsit]">
+    <div role="alert" [ngClass]="{'alert alert-dark': (InvitedUsers$ | async)?.length > 0 }">
       <ul class="search-result">
         <li *ngFor="let user of InvitedUsers$ | async" >
             {{user.email}}
