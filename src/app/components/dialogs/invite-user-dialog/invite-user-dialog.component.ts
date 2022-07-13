@@ -14,7 +14,9 @@ import { InvitedUser } from 'src/app/models/InvitedUser.model';
   styleUrls: ['./invite-user-dialog.component.css']
 })
 export class InviteUserDialogComponent implements OnInit {
-
+  
+// add regex
+  public isMouseOver=false;
   private searchTerms = new Subject<string>();
   selectedUser:InvitedUser;
   public isSelected = false;
@@ -56,7 +58,7 @@ export class InviteUserDialogComponent implements OnInit {
     // })
   }
 
-  onNoClick(): void {
+  endClick(): void {
     // console.log("wp");
     this.dialogRef.close();
   }

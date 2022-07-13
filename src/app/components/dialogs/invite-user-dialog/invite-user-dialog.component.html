@@ -16,16 +16,18 @@
   </div>
   <ng-template #searchBlock>
     <mat-form-field appearance="fill">
-      <mat-label>Team name</mat-label>
+      <mat-label>Email użytkownika</mat-label>
       <input matInput formControlName="SearchField">
     </mat-form-field>
     <!-- <ng-container *ngIf="(InvitedUsers$ | async)?.length"> -->
     <!-- alert alert-danger *ngIf=" InvitedUsers$ | async"-->
     <div role="alert" [ngClass]="{'alert alert-dark': (InvitedUsers$ | async)?.length > 0 }">
       <div class="searchResult">
-        <div (click)="select(user)" class="singleUser  d-flex justify-content-between align-items-center  g-0" *ngFor="let user of InvitedUsers$ | async">
+        <div [ngClass]="{'singleUser d-flex justify-content-between align-items-center g-0 singleUser':true}" (click)="select(user)"  (mouseout)="isMouseOver=false" (mouseover)="isMouseOver=true"  *ngFor="let user of InvitedUsers$ | async">
+
           <i class="fa-solid fa-user"></i>
           <div class="userEmail">{{user.email}}</div>
+
         </div>
       </div>
 
@@ -39,7 +41,7 @@
 </div>
 <div mat-dialog-actions>
   <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
-    <button [disabled]="!selectedUser" class="w-100 btn btn-success" mat-button cdkFocusInitial>
+    <button (click)="endClick()" class="w-100 sendButton" [disabled]="!selectedUser" color="success" mat-raised-button cdkFocusInitial>
       <span *ngIf="!selectedUser; else spanSeleted ">select person above</span> 
       <ng-template #spanSeleted>Send an invitation</ng-template>
     </button>

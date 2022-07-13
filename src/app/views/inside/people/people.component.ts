@@ -10,21 +10,15 @@ import { InviteUserDialogComponent } from 'src/app/components/dialogs/invite-use
 export class PeopleComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
-
   ngOnInit(): void {
   }
   addPerson()
   {
     this.openDialog();
   }
-  // const positionStrategy = this.overlay.position()
-  // .global()
-  // .centerHorizontally()
-  // .centerVertically();
   openDialog(): void {
     const dialogPosition: DialogPosition = {
-      top: '35%',
-      // left: 'px'
+      top: '15%',
     };
     const dialogRef = this.dialog.open(InviteUserDialogComponent, {
       width: '300px',
