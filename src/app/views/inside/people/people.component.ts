@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogPosition, MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 import { InviteUserDialogComponent } from 'src/app/components/dialogs/invite-user-dialog/invite-user-dialog.component';
+import { InvitedUser } from 'src/app/models/InvitedUser.model';
+import { User } from 'src/app/models/User.model';
+import { InvitedUserService } from 'src/app/services/invited-user.service';
 
 @Component({
   selector: 'app-people',
@@ -9,8 +13,12 @@ import { InviteUserDialogComponent } from 'src/app/components/dialogs/invite-use
 })
 export class PeopleComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  selectedUser:InvitedUser;
+  invitedUsers$:Observable<InvitedUser[]>;
+  constructor(public dialog: MatDialog,private invitedUserService:InvitedUserService) { }
   ngOnInit(): void {
+    this.invitedUsers$=this.invitedUserService.GetAllInvitedUsers();
+
   }
   addPerson()
   {

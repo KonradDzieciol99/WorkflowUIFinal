@@ -1,7 +1,100 @@
-.mat-raised-button.mat-primary{
 
+.AddUserButton{
+
+    min-width: 0 !important;
 }
-.mat-raised-button.mat-primary:hover{
+.AddUserButton:hover{
     background-color: #00c853;
     color: black;
 }
+
+.container-fluid{
+
+    height: -moz-calc(100% - 72px);
+    height: -webkit-calc(100% - 72px);
+    height: calc(100% - 72px);
+    /* height: 40%; */
+}
+.People{
+    overflow: auto;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: var(--color-ng-mat-primary);
+    padding-top: 5px;
+    /* row-gap: 20px; */
+}
+
+.PeopleCard{
+   display: flex;
+   flex-direction:  column;
+   gap: 1px;
+}
+.Messages {
+    overflow: auto;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: var(--color-ng-mat-primary);
+    padding-top: 5px; 
+}
+.singleUser{
+    padding: 10px;
+    border-radius:6px;
+    /* position: fixed; */
+    display:flex;
+    /* flex-direction:column; */
+    overflow: hidden ;
+    /* max-height: 30px; */
+    /* flex-wrap: wrap; */
+}
+/* .userEmail:before{
+    background-color: #00c853;
+    position: absolute;
+    left: -5px;
+} */
+/* @media screen and (max-width: 992px) {
+    .singleUser {
+      width: 50%;
+    }
+  } */
+/* .singleUser :nth-child(odd) {
+    background: silver;
+} */
+.singleUser:hover{
+    padding: 10px;
+    /* background-color: rgba(255, 255, 255, 0.452); */
+    opacity: 0.8;
+    cursor: pointer;
+    /* transition: opacity 1s ease-out 100ms */
+}
+.inputSearch{
+    background-color: #3A3B3C;
+    border: 1;
+    border-radius: 5px;
+    border-color: var(--color-ng-mat-primary);
+    color: white !important;
+}
+/* .mat-form-field{
+    background-color: var(--color-ng-mat-primary);
+}
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+} */
+/* .mat-form-field{
+background-color: white;
+margin: 0 !important;
+padding: 0 !important;
+color: white !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+margin: 0 !important;
+padding: 0 !important;
+}
+mat-form-field.mat-form-field {
+    color:white;
+  } */
+
+/* ::placeholder {
+    color: red;
+    opacity: 1; 
+  } /* Firefox */

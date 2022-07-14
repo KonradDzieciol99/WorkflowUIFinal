@@ -17,7 +17,7 @@
   <ng-template #searchBlock>
     <mat-form-field appearance="fill">
       <mat-label>Email użytkownika</mat-label>
-      <input matInput formControlName="SearchField">
+      <input type="search" matInput formControlName="SearchField">
     </mat-form-field>
     <!-- <ng-container *ngIf="(InvitedUsers$ | async)?.length"> -->
     <!-- alert alert-danger *ngIf=" InvitedUsers$ | async"-->
@@ -41,7 +41,7 @@
 </div>
 <div mat-dialog-actions>
   <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
-    <button (click)="endClick()" class="w-100 sendButton" [disabled]="!selectedUser" color="success" mat-raised-button cdkFocusInitial>
+    <button (click)="endClick(selectedUser)" class="w-100 sendButton" [disabled]="!selectedUser" color="success" mat-raised-button cdkFocusInitial>
       <span *ngIf="!selectedUser; else spanSeleted ">select person above</span> 
       <ng-template #spanSeleted>Send an invitation</ng-template>
     </button>

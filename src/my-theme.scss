@@ -11,10 +11,16 @@ $my-theme: material.define-light-theme((
  color: (
    primary: $my-primary,
    accent: $my-accent,
+  //  warn:
  )
 ));
 
-@include material.all-component-themes($my-theme);
+$my-palette2: material.$indigo-palette;
+
+// @include material.all-component-themes($my-theme);
+@include material.button-theme($my-theme);
+// @include material.all-component-themes($my-theme);
+
 
 $custom-success: material.define-palette(material.$green-palette);
 $custom-danger: material.define-palette(material.$orange-palette);
@@ -27,7 +33,23 @@ $custom-danger: material.define-palette(material.$orange-palette);
     background-color: material.get-color-from-palette($custom-danger, 500);
     color: material.get-color-from-palette($custom-danger, 500-contrast);
 }
-  
+
+
+// $primary: map-get($my-theme, primary);
+// $accent: map-get($my-theme, accent);
+
+// $app-primary: mat-palette($my-primary);
+
+:root {
+
+
+  --color-ng-mat-primary: #{material.get-color-from-palette($my-primary)};
+  // --color-ng-mat-accent: #{mat-color($my-primary)};
+  // --color-ng-mat-warn: #{mat-color($my-primary)};
+  // --color-ng-mat-success: #{mat-color($my-primary)};
+}
+//  --color-ng-mat-primary: #{mat-color(material.get-color-from-palette($my-primary))}; tez działa
+//  --color-ng-mat-primary: #{mat-color(material.get-color-from-palette($custom-success, A700))}; tez działa
 
 // .mat-danger {
 //     background-color: material.get-color-from-palette($custom-danger, 500);

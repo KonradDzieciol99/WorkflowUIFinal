@@ -15,7 +15,8 @@ import { InvitedUser } from 'src/app/models/InvitedUser.model';
 })
 export class InviteUserDialogComponent implements OnInit {
   
-// add regex
+  // add regex
+  // add toast
   public isMouseOver=false;
   private searchTerms = new Subject<string>();
   selectedUser:InvitedUser;
@@ -41,15 +42,15 @@ export class InviteUserDialogComponent implements OnInit {
       })
     );
     
-    this.InvitedUsers$.subscribe(val=>{
-      console.log(val)
-      if(val.length>0){
-        this.resoultExsit='alert alert-danger';
-      }
-      else{
-        this.resoultExsit='';
-      }
-    })
+    // this.InvitedUsers$.subscribe(val=>{
+    //   console.log(val)
+    //   if(val.length>0){
+    //     this.resoultExsit='alert alert-danger';
+    //   }
+    //   else{
+    //     this.resoultExsit='';
+    //   }
+    // })
     
 
     // .subscribe(val=>{
@@ -58,8 +59,8 @@ export class InviteUserDialogComponent implements OnInit {
     // })
   }
 
-  endClick(): void {
-    // console.log("wp");
+  endClick(selectedUser:InvitedUser): void {
+    this.invitedUserService.InviteUser(selectedUser.id).subscribe();
     this.dialogRef.close();
   }
 

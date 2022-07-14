@@ -15,7 +15,7 @@ export class InvitedUserService {
   FindUser(email:string) {
     return this.http.get<InvitedUser[]>('api/Invitations/FindUser/'+ email);
   }
-  InviteUser(idOfInvitedUser:string) {
+  InviteUser(idOfInvitedUser:number) {
     return this.http.post<InvitedUser[]>('api/Invitations/InviteUser',idOfInvitedUser);
   }
 
