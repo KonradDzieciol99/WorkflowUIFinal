@@ -22,6 +22,7 @@ const routes: Routes = [
       { path: "teams-managment", component: TeamsManagmentComponent,
       children:[]
       },
+      { path: "TestComponent", component: TestComponent},
       { path: "people", component: PeopleComponent},
       { path: "team-home/:id",  resolve: {team: TeamHomeResolver}, component: TeamHomeComponent,
       children:[

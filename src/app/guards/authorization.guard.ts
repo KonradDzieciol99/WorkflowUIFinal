@@ -15,7 +15,7 @@ export class AuthorizationGuard implements CanActivate {
     private authenticationService: AuthenticationService,
     private jwtHelper: JwtHelperService,
     
-) {console.log("asdfasdfasdfa") }
+) {}
 
 
     canActivate() {

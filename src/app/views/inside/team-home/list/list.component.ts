@@ -7,7 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { BehaviorSubject, concatWith, map, merge, mergeMap, Observable, subscribeOn } from 'rxjs';
 import { CreateTeamComponent } from 'src/app/components/dialogs/create-team/create-team.component';
-import { PTask } from 'src/app/models/PTask.model';
+import { AppTask } from 'src/app/models/AppTask.model';
 import { Team } from 'src/app/models/Team.model';
 import { PTaskService } from 'src/app/services/ptask.service';
 import { TeamService } from 'src/app/services/team.service';
@@ -63,7 +63,7 @@ export class ListComponent implements OnInit {
 
     if(!row.valid){return;}
  
-    let updatePTask:PTask = {
+    let updatePTask:AppTask = {
       teamId: this.currentTeam.id,
       id: 0,
       startDate: undefined,
@@ -89,7 +89,7 @@ export class ListComponent implements OnInit {
       if (key=="teamId") {updatePTask.teamId=row.get(key).value;}
     });
 
-    this.pTaskService.updatePTask(updatePTask).subscribe();
+    this.pTaskService.UpdateAppTask(updatePTask).subscribe();
     this.dataSource.subscribe(res=>console.log(res))
   }
   GetIconPriorityId(value:number): string
@@ -127,7 +127,7 @@ export class ListComponent implements OnInit {
     }
   }
   create(){
-    let prePTask:PTask = {
+    let prePTask:AppTask = {
       teamId: this.currentTeam.id,
       id: 0,
       startDate: undefined,
@@ -138,9 +138,9 @@ export class ListComponent implements OnInit {
       stateId: 0,
       Performer: undefined
     }
-    this.pTaskService.createPTask(prePTask).subscribe(res=>this.addRow(res))
+    this.pTaskService.CreateAppTask(prePTask).subscribe(res=>this.addRow(res))
   }
-  addRow(d?: PTask, noUpdate?: boolean) {
+  addRow(d?: AppTask, noUpdate?: boolean) {
 
 
      const row = this.fb.group({

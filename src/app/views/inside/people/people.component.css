@@ -10,10 +10,9 @@
 
 .container-fluid{
 
-    height: -moz-calc(100% - 72px);
-    height: -webkit-calc(100% - 72px);
-    height: calc(100% - 72px);
-    /* height: 40%; */
+    /* height: -moz-calc(100% - 72px);
+    height: -webkit-calc(100% - 72px); */
+    height: 100%;
 }
 .People{
     overflow: auto;
@@ -21,7 +20,6 @@
     border-width: 1px 1px 1px 1px;
     border-color: var(--color-ng-mat-primary);
     padding-top: 5px;
-    /* row-gap: 20px; */
 }
 
 .PeopleCard{
@@ -39,32 +37,16 @@
 .singleUser{
     padding: 10px;
     border-radius:6px;
-    /* position: fixed; */
     display:flex;
-    /* flex-direction:column; */
     overflow: hidden ;
-    /* max-height: 30px; */
-    /* flex-wrap: wrap; */
+    text-overflow: ellipsis;
+
 }
-/* .userEmail:before{
-    background-color: #00c853;
-    position: absolute;
-    left: -5px;
-} */
-/* @media screen and (max-width: 992px) {
-    .singleUser {
-      width: 50%;
-    }
-  } */
-/* .singleUser :nth-child(odd) {
-    background: silver;
-} */
+
 .singleUser:hover{
     padding: 10px;
-    /* background-color: rgba(255, 255, 255, 0.452); */
     opacity: 0.8;
     cursor: pointer;
-    /* transition: opacity 1s ease-out 100ms */
 }
 .inputSearch{
     background-color: #3A3B3C;
@@ -72,29 +54,22 @@
     border-radius: 5px;
     border-color: var(--color-ng-mat-primary);
     color: white !important;
-}
-/* .mat-form-field{
-    background-color: var(--color-ng-mat-primary);
-}
-.mat-form-field-appearance-outline .mat-form-field-wrapper {
-    margin: 0 !important;
-    padding: 0 !important;
-} */
-/* .mat-form-field{
-background-color: white;
-margin: 0 !important;
-padding: 0 !important;
-color: white !important;
-}
-.mat-form-field-appearance-outline .mat-form-field-wrapper {
-margin: 0 !important;
-padding: 0 !important;
-}
-mat-form-field.mat-form-field {
-    color:white;
-  } */
+    text-overflow: ellipsis;
 
-/* ::placeholder {
-    color: red;
-    opacity: 1; 
-  } /* Firefox */
+}
+/* .userEmail{
+} */
+.userPicture{
+    margin-right: 20px;
+}
+.People > * {
+    min-width: 30px !important;
+}
+
+
+@media only screen and (max-width: 576px) { 
+    .userEmail { display: none;}  
+    .addPeopleText{ display: none;}  
+    .singleUser{ justify-content: center !important; }
+    .userPicture{margin-right: 0px !important;}
+}

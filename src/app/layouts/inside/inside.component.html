@@ -1,34 +1,48 @@
-<!-- <app-inside-topnavbar></app-inside-topnavbar> -->
-<header #topHeightIdentifier class="p-3 bg-dark text-white headerclass">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+<div class="h-100 con">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand ccc" href="http://www.linkedin.com/in/konrad-dzięcioł-235a8523a"><i class="fa-brands fa-linkedin"></i></a>
 
-            <!-- <button type="button" class="btn btn-outline-light me-2" aria-label="Toggle sidenav" mat-icon-button
-                (click)="drawer.toggle()"> -->
-            <button (click)="sidenavButtonClick()" type="button" class="btn btn-outline-light me-2" mat-icon-button>
-                <!-- *ngIf="isHandset$ | async"> -->
-                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
+            <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+                &#9776;
             </button>
 
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                <li><a routerLink="teams-managment" class="nav-link px-2 text-white"><i
-                            class="fa-solid fa-people-group"></i> Teams</a></li>
-                <li><a routerLink="people" class="nav-link px-2 text-white"><i class="fa-solid fa-address-card"></i>
-                        People</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-            </ul>
-
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-            </form>
-
-            <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2">Login</button>
-                <button type="button" class="btn btn-warning" (click)="LogOut()">Log out</button>
+            <!-- Step 2: Add the ngbCollapse directive to the element below. -->
+            <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse w-100 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto" >
+                    <li class="nav-item active">
+                        <!-- Step 4: Close the menu when a link is clicked. -->
+                        <a class="nav-link" [routerLink]="'teams-managment'">
+                            <i class="fa-solid fa-people-group"></i> Teams
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'people'">
+                            <i class="fa-solid fa-address-card"></i> People
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About</a>
+                    </li> -->
+                </ul>
             </div>
+            <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse w-auto order-3 dual-collapse2 dual-collapse2">
+                <!-- <button type="button" id="logout" class="btn btn-warning" (click)="LogOut()"><i class="fa-solid fa-right-from-bracket"></i> Log out</button> -->
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active text-nowrap">
+                        <!-- Step 4: Close the menu when a link is clicked. -->
+                        <a class="nav-link" role="button"  >
+                            <i class="fa-solid fa-right-from-bracket"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
+    </nav>
+    <div class="mainSection">
+        <router-outlet></router-outlet>
     </div>
-</header>
-<router-outlet></router-outlet>
+</div>

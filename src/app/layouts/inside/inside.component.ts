@@ -15,8 +15,11 @@ import { MatButton } from '@angular/material/button';
   styleUrls: ['./inside.component.css']
 })
 export class InsideComponent implements OnInit {
-  @ViewChild('topHeightIdentifier')  topHeightIdentifier: ElementRef;
-  @ViewChild('headerButtonIdentifier')  headerButtonIdentifier: MatButton;
+  // @ViewChild('topHeightIdentifier')  topHeightIdentifier: ElementRef;
+  // @ViewChild('headerButtonIdentifier')  headerButtonIdentifier: MatButton;
+
+  public isMenuCollapsed = false;
+
   
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -47,7 +50,7 @@ export class InsideComponent implements OnInit {
       const height = entries[0].contentRect.height;
       this.sizeService.SetToolbarSize(height);
     });
-    sizeObserver.observe(this.topHeightIdentifier.nativeElement);
+    // sizeObserver.observe(this.topHeightIdentifier.nativeElement);
 
     
   }

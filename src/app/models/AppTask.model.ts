@@ -1,6 +1,6 @@
 import { User } from "./User.model"
 
-export interface PTask {
+export interface AppTask {
     id:number
     startDate:Date
     endDate:Date

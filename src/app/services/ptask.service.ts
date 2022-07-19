@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PTask } from '../models/PTask.model';
+import { AppTask } from '../models/AppTask.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +11,13 @@ export class PTaskService {
 
 
   constructor(private http: HttpClient) { }
-
+  
   GetAllByTeamId(id:number) {
-    return this.http.get<PTask[]>('api/PTasks/GetAllByTeamId/'+id);
+    return this.http.get<AppTask[]>('api/AppTasks/GetAllByTeamId/'+id);
   }
-  createPTask(prePTask:PTask) {
-    return this.http.post<PTask>('api/PTasks/CreatePTask',prePTask);
+  CreateAppTask(prePTask:AppTask) {
+    return this.http.post<AppTask>('api/AppTasks/CreatePTask',prePTask);
   }
-  updatePTask(updatePTask: PTask) {
-    return this.http.put<PTask>('api/PTasks/UpdatePTask',updatePTask);  }
+  UpdateAppTask(updatePTask: AppTask) {
+    return this.http.put<AppTask>('api/AppTasks/UpdatePTask',updatePTask);  }
   }

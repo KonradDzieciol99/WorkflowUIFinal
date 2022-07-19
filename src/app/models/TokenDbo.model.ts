@@ -1,4 +1,4 @@
 export class TokenDbo {
-    token!: string;
-    expireMinutes!: number;
+    token: string;
+    expireMinutes: number;
 }

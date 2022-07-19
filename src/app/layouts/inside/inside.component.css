@@ -1,16 +1,10 @@
-/* .sidenav-container {
+.mainSection{
     height: 100%;
 }
-.sidenav {
-    width: 200px;
+.con{
+    display: flex;
+    flex-direction: column;
 }
-
-.sidenav .mat-toolbar {
-    background: inherit;
+.navbar-nav .nav-item:hover .nav-link {
+    color: var(--bs-white);
 }
-
-.mat-toolbar.mat-primary {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-} */
