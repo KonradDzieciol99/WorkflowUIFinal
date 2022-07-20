@@ -93,7 +93,19 @@
 }
 
 .card-message{
+    color: var(--bs-white);
+    max-width: 65%;
+    margin: 1rem;
+}
+
+.card-message-body{
     background-color:var(--color-ng-mat-primary) ;
     color: var(--bs-white);
     border-radius: 30px;
+    padding:  0.6rem 0.5rem 0.5rem 0.9rem;
+}
+#user-img{
+ margin-right: 1.2rem;
+ margin-bottom: 0.1rem;
+
 }
