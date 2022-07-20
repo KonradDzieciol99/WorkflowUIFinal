@@ -16,12 +16,8 @@
 }
 .People{
     overflow: auto;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: var(--color-ng-mat-primary);
     padding-top: 5px;
 }
-
 .PeopleCard{
    display: flex;
    flex-direction:  column;
@@ -42,7 +38,6 @@
     text-overflow: ellipsis;
 
 }
-
 .singleUser:hover{
     padding: 10px;
     opacity: 0.8;
@@ -72,17 +67,33 @@
     .singleUser{ justify-content: center !important; }
     .userPicture{margin-right: 0px !important;}
 }
-
-
 .card{
     border-color: var(--color-ng-mat-primary);
-    height: 100%;
+    display: block !important;
 }
-.card-footer{
-    border-color: var(--color-ng-mat-primary);
+
+.message{
 
 }
-.card-body{
-    border-color: var(--color-ng-mat-primary);
+.xxx{
+    background-color: #00c853;
+    width: 10%;
+    height: 10%;
+}
+#section-2{
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+}
 
+.ng-custom-boder{
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: var(--color-ng-mat-primary);
+}
+
+.card-message{
+    background-color:var(--color-ng-mat-primary) ;
+    color: var(--bs-white);
+    border-radius: 30px;
 }

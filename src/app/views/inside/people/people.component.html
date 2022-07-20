@@ -1,6 +1,6 @@
 <div class="container-fluid row g-0">
   <div class="col-3">
-    <div class="People d-flex flex-column p-3 text-white bg-dark h-100">
+    <div class="People ng-custom-boder d-flex flex-column p-3 text-white bg-dark h-100">
       <button class="AddUserButton mb-2 overflow-hidden px-2" mat-raised-button (click)="addPerson()" color="primary">
         <i class="fa-solid fa-user-plus"></i>
         <span class="addPeopleText"> Add people</span>
@@ -27,16 +27,57 @@
 
     </div>
   </div>
-  <div class="col-9 bg-dark">
+  <div id="section-2" class="col-9 bg-dark ng-custom-boder">
+    <!-- <div class=""> -->
+
+      <div class="card-message p-2" [matTooltip]="'Last updated 3 mins ago'" matTooltipPosition="before">
+        <div class="row g-0">
+
+          <div class="col-1 d-flex justify-content-center align-items-center">
+            <!-- <img src="" class="card-img-top" alt="..."> -->
+            <i class="fa-solid fa-user p-2"></i>
+          </div>
+
+          <div class="col-11">
+            <div class="card-message-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-message" [matTooltip]="'Last updated 3 mins ago'" matTooltipPosition="before">
+        <div class="row g-0">
+          <div class="col-2">
+            <!-- <img src="" class="card-img-top" alt="..."> -->
+            <i class="fa-solid fa-user card-img-top"></i>
+          </div>
+          <div class="col-10">
+            <div class="card-message-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+
+</div>
+
+
+
+
+
+<!--
     <div class="card text-white bg-dark">
 
       <div class="card-body">
 
-        <!-- <div *ngIf="(messages$ | async)?.length === 0 || messages$ === undefined || messages$ === null">
-          <p class="card-text">No messages yet... say hi by using the message box below</p>
+        <div *ngIf="(messages$ | async)?.length === 0 || messages$ === undefined || messages$ === null">
+          <p class="card-text text-center">No messages yet... say hi by using the message box below</p>
         </div>
-        {{(messages$ |async)?.length}} -->
-        <!-- <span *ngIf="(messages$ | async) as breeds"> -->
+
           <div class="Messages text-white bg-dark" *ngFor="let messaged of messages$ | async">
             <div class="card-header text-blue">{{messaged.senderId}}(dopisane)</div>
             <div class="card-body">
@@ -46,7 +87,7 @@
               </p>
             </div>
           </div>
-        <!-- </span> -->
+        </span> 
       </div>
       <div class="card-footer">
         <form #messageForm="ngForm" (ngSubmit)="sendMessage()" autocomplete="off">
@@ -63,10 +104,25 @@
       </div>
     </div>
 
+  
+
+
+-->
+
+
+
+
+
+
+
+
+<!-- <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Dark card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
-</div>
-
-
+</div> -->
 
 <!-- <div class="Messages text-white bg-dark">
   <div class="card-header">name + avatar</div>

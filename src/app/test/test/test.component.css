@@ -1,44 +1,22 @@
-.container-fluid{
-    background-color: aqua;
-}
-.somediv{
-    background-color: blue;
-}
-.testSticky{
-    background-color: blueviolet;
-}
 .test1{
     height: 20%;
-    background-color: cadetblue;
+    background-color: #002bff;
+    display: flex;
 }
 .test2{
-    height: 10%;
-    width: 12%;
-    background-color: red;
+    height: 20%;
+    width: 50%;
+    background-color: #8d94b9;
 }
 .test3{
-    opacity: 0.4;
-    position: relative;
-    transition: all 1s ease-in-out;
-    height: 10%;
-    width: 12%;
-    background-size: 400%;
-    background-color: #00ffd5;
+    height: 80%;
+    width: 50%;
+    background-color: #b532c1;
 }
-.test3:before{
-    opacity: 0.0;
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-}
-.test3:hover:before {
-    opacity: 1;
-    animation: myfirst 4s linear 2s infinite alternate;
 
-}
-@keyframes myfirst {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-  }
+
+
+
 
 .glow-on-hover {
     width: 220px;
