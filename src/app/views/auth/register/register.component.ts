@@ -39,10 +39,18 @@ export class RegisterComponent implements OnInit {
     //this.loading = true;
     let Team:Team = {name:val.email};
     this.authenticationService.Register(val.email, val.password).pipe(
-      concatMap(() => { return this.teamService.CreateTeam(Team)})
-    ).subscribe((response) => {
+
+      concatMap((res) => { console.log(res); return this.teamService.CreateTeam(Team)})
+      //
+      //
+      //code need refactoring
+      //
+      //
+    )
+    .subscribe((response) => 
+    {
       this.router.navigateByUrl('/inside');
       console.log("User is Registered in...");
-      });
+    });
   }
 }

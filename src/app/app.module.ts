@@ -40,6 +40,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { TestComponent } from './test/test/test.component';
 import { PeopleComponent } from './views/inside/people/people.component';
 import { InviteUserDialogComponent } from './components/dialogs/invite-user-dialog/invite-user-dialog.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 //
 @NgModule({
@@ -60,6 +61,7 @@ import { InviteUserDialogComponent } from './components/dialogs/invite-user-dial
     InviteUserDialogComponent,
   ],
   imports: [
+    MatTooltipModule,
     MatSelectModule,
     MatProgressSpinnerModule,
     BrowserModule,

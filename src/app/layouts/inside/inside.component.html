@@ -33,11 +33,17 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active text-nowrap">
                         <!-- Step 4: Close the menu when a link is clicked. -->
-                        <a class="nav-link" role="button"  >
+                        <a class="nav-link" role="button" (click)="LogOut()"  >
                             <i class="fa-solid fa-right-from-bracket"></i> Log out
                         </a>
                     </li>
+                    <li class="nav-item text-nowrap">
+                        <a class="nav-link" role="button" [matTooltip]="loggedInUser.email" matTooltipPosition="below">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                    </li>
                 </ul>
+
             </div>
 
         </div>

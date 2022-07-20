@@ -1,4 +1,6 @@
 export class TokenDbo {
     token: string;
-    expireMinutes: number;
+    expireTime: number;
+    id:number;
+    email:string;
 }

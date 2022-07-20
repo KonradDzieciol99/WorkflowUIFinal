@@ -66,10 +66,23 @@
     min-width: 30px !important;
 }
 
-
 @media only screen and (max-width: 576px) { 
     .userEmail { display: none;}  
     .addPeopleText{ display: none;}  
     .singleUser{ justify-content: center !important; }
     .userPicture{margin-right: 0px !important;}
+}
+
+
+.card{
+    border-color: var(--color-ng-mat-primary);
+    height: 100%;
+}
+.card-footer{
+    border-color: var(--color-ng-mat-primary);
+
+}
+.card-body{
+    border-color: var(--color-ng-mat-primary);
+
 }

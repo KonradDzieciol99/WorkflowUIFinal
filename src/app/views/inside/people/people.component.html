@@ -1,58 +1,79 @@
-
-
 <div class="container-fluid row g-0">
   <div class="col-3">
     <div class="People d-flex flex-column p-3 text-white bg-dark h-100">
-      <button
-        class="AddUserButton mb-2 overflow-hidden px-2"
-        mat-raised-button
-        (click)="addPerson()"
-        color="primary"
-      >
+      <button class="AddUserButton mb-2 overflow-hidden px-2" mat-raised-button (click)="addPerson()" color="primary">
         <i class="fa-solid fa-user-plus"></i>
         <span class="addPeopleText"> Add people</span>
       </button>
 
-      <!-- <mat-form-field class="mat-focused" color="primary" >
-                    <mat-label >Enter your email</mat-label>
-                    <input  autocomplete="off" matInput type="text" >
-                </mat-form-field> -->
-      <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
       <form class="mb-2">
-        <input
-          type="search"
-          class="inputSearch form-control form-control-dark"
-          placeholder="Wyszukaj użytkownika..."
-          aria-label="Search"
-        />
+        <input type="search" class="inputSearch form-control form-control-dark" placeholder="Wyszukaj użytkownika..."
+          aria-label="Search" />
       </form>
 
       <h1 class="overflow-hidden">Czaty</h1>
+
       <div class="PeopleCard">
         <div *ngFor="let user of invitedUsers$ | async">
-          <div
-            (click)="selectedUser = user"
+          <div (click)="SelectUser(user)"
             class="singleUser alert-primary d-flex justify-content-between align-items-center g-0 overflow-hidden"
             role="alert">
 
             <i class="userPicture fa-solid fa-user"></i>
             <div class="userEmail">{{ user?.email }}</div>
-            <!-- <button mat-icon-button (click)="select(null)"><i class="ml-auto fa-solid fa-xmark"></i></button> -->
           </div>
         </div>
       </div>
+
     </div>
   </div>
-  <div class="col-9">
-    <div class="Messages text-white bg-dark w-100 h-100">
-      <div class="card-header">Header</div>
+  <div class="col-9 bg-dark">
+    <div class="card text-white bg-dark">
+
       <div class="card-body">
-        <h5 class="card-title">Dark card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+
+        <!-- <div *ngIf="(messages$ | async)?.length === 0 || messages$ === undefined || messages$ === null">
+          <p class="card-text">No messages yet... say hi by using the message box below</p>
+        </div>
+        {{(messages$ |async)?.length}} -->
+        <!-- <span *ngIf="(messages$ | async) as breeds"> -->
+          <div class="Messages text-white bg-dark" *ngFor="let messaged of messages$ | async">
+            <div class="card-header text-blue">{{messaged.senderId}}(dopisane)</div>
+            <div class="card-body">
+              <h5 class="card-title">{{messaged.messageSent}}</h5>
+              <p class="card-text">
+                {{messaged.content}}(dopisane)
+              </p>
+            </div>
+          </div>
+        <!-- </span> -->
+      </div>
+      <div class="card-footer">
+        <form #messageForm="ngForm" (ngSubmit)="sendMessage()" autocomplete="off">
+          <div class="input-group">
+            <input name="messageContent" required [(ngModel)]="messageContent" type="text" class="form-control input-sm"
+              placeholder="Send a private message">
+            <div class="input-group-append">
+              <button [disabled]="!messageForm.valid" class="btn btn-primary" type="submit">Send
+                <i class="fa fa-spinner fa-spin"></i>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+
   </div>
 </div>
+
+
+
+<!-- <div class="Messages text-white bg-dark">
+  <div class="card-header">name + avatar</div>
+  <div class="card-body">
+    <h5 class="card-title">time</h5>
+    <p class="card-text">
+        content
+    </p>
+  </div>
+</div> -->

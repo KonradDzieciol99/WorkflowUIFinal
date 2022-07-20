@@ -7,6 +7,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
 import { SizeService } from 'src/app/services/size.service';
 import { MatButton } from '@angular/material/button';
+import { User } from 'src/app/models/User.model';
+import { TokenDbo } from 'src/app/models/TokenDbo.model';
 
 @Component({
   
@@ -19,7 +21,7 @@ export class InsideComponent implements OnInit {
   // @ViewChild('headerButtonIdentifier')  headerButtonIdentifier: MatButton;
 
   public isMenuCollapsed = false;
-
+  public loggedInUser:TokenDbo;
   
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -29,7 +31,8 @@ export class InsideComponent implements OnInit {
 
   constructor(private host: ElementRef,private router: Router,
     private breakpointObserver: BreakpointObserver,
-    private teamService:TeamService,private authenticationService:AuthenticationService,
+    private teamService:TeamService,
+    private authenticationService:AuthenticationService,
     private sizeService: SizeService) {}
 
   LogOut(){
@@ -38,21 +41,19 @@ export class InsideComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.authenticationService.currentUser$.subscribe(u=>this.loggedInUser=u)
   }
   ngAfterViewInit() {
     // var width = this.myIdentifier.nativeElement.offsetWidth;
     // console.log('Width:' + width);
 
-    this.teamService.GetAll().subscribe();
+    // this.teamService.GetAll().subscribe();
 
     const sizeObserver = new ResizeObserver(entries => {
       const height = entries[0].contentRect.height;
       this.sizeService.SetToolbarSize(height);
     });
     // sizeObserver.observe(this.topHeightIdentifier.nativeElement);
-
-    
   }
 
   private isClicked=true;
