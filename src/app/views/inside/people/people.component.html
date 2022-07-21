@@ -1,4 +1,4 @@
-<div class="container-fluid row g-0">
+<div class="container-fluid flex-nowrap row g-0">
   <div class="col-3">
     <div class="People ng-custom-boder d-flex flex-column p-3 text-white bg-dark h-100">
       <button class="AddUserButton mb-2 overflow-hidden px-2" mat-raised-button (click)="addPerson()" color="primary">
@@ -27,28 +27,33 @@
 
     </div>
   </div>
-  <div id="section-2" class="col-9 bg-dark ng-custom-boder">
-    <!-- <div class=""> -->
-
-    <div class="card-message d-flex align-items-end" [matTooltip]="'Last updated 3 mins ago'"
-      matTooltipPosition="before">
-
-      <!-- <div class="d-flex justify-content-center align-items-center"> -->
-      <!-- <img src="" class="card-img-top" alt="..."> -->
-      <i id="user-img" class="fa-solid fa-user"></i>
-      <!-- </div> -->
-
-      <div class="card-message-body">
-        <p class="card-text">This is a wider card with supporting text belowThis is a wider card with supporting text
-          belowThis is a wider card with supporting text belowThis is a wider card with supporting text belowThis is a
-          wider card with supporting text belowThis is a wider card with supporting text belowThis is a wider card with
-          supporting text belowThis is a wider card with supporting text belowThis is a wider card with supporting text
-          belowThis is a wider card with supporting text below
-        </p>
+  <div class="chat col-9 bg-dark ng-custom-boder d-flex flex-column">
+    <div class="chat-header p-2 ng-custom-boder text-white bg-dark text-white" *ngIf="selectedUser">
+        <i id="user-img" class="fa-solid fa-user"></i> {{selectedUser.email}}
+    </div>
+    <div class="chat-body h-100 overflow-auto">
+      <div [ngClass]="selectedUser.id==messaged.senderId ? 'align-self-start' : 'align-self-end flex-row-reverse' " class="card-message  d-flex align-items-end" *ngFor="let messaged of messages$ | async" [matTooltip]="messaged.messageSent.toString() | date: 'MMMM d, y, h:mm:ss a' "
+        matTooltipPosition="before">
+        <i id="user-img" class="fa-solid fa-user"></i>
+        <div class="card-message-body">
+          <p class="card-text">{{messaged.content}}</p>
+        </div>
       </div>
     </div>
+    <div class="chat-footer text-muted ng-custom-boder p-2">
+      <form #messageForm="ngForm" (ngSubmit)="sendMessage()" autocomplete="off">
+        <div class="input-group">
+          <input name="messageContent" required [(ngModel)]="messageContent" type="text" class="form-control input-sm"
+            placeholder="Send a private message">
+          <div class="input-group-append">
+            <button [disabled]="!messageForm.valid" class="btn btn-primary" type="submit">Send
+              <i class="fa fa-spinner fa-spin"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-
 </div>
 
 
