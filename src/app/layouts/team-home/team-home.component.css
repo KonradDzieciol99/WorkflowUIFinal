@@ -1,6 +1,14 @@
 /* .sidenav-container {
     height: 100% !important;
 } */
+#close-side-nav{
+    position: absolute;
+    left: 193px;
+    top: 300px;
+    z-index: 1000;
+    /* right: 200px; */
+    /* top: 200px; */
+}
 .sidenav {
     width: 200px;
 }/*
@@ -36,5 +44,8 @@
     max-width:100%;
 } */
 .mat-sidenav-container{
-    min-height: 100%;
+    height: 100%; 
 }
+/* .test1{
+    height: 100%;
+} */

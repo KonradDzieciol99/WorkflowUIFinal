@@ -32,12 +32,13 @@
         <i id="user-img" class="fa-solid fa-user"></i> {{selectedUser.email}}
     </div>
     <div class="chat-body h-100 overflow-auto">
-      <div [ngClass]="selectedUser.id==messaged.senderId ? 'align-self-start' : 'align-self-end flex-row-reverse' " class="card-message  d-flex align-items-end" *ngFor="let messaged of messages$ | async" [matTooltip]="messaged.messageSent.toString() | date: 'MMMM d, y, h:mm:ss a' "
+      <div [ngClass]="selectedUser.id==messaged.senderId ? 'align-self-start' : 'align-self-end' " class="card-message  d-flex align-items-end" *ngFor="let messaged of messages$ | async; let last = last" [matTooltip]="messaged.messageSent.toString() | date: 'MMMM d, y, h:mm:ss a' "
         matTooltipPosition="before">
-        <i id="user-img" class="fa-solid fa-user"></i>
+        <i id="user-img" *ngIf="selectedUser.id==messaged.senderId" class="fa-solid fa-user"></i>
         <div class="card-message-body">
           <p class="card-text">{{messaged.content}}</p>
         </div>
+        <i class="seen-icon" *ngIf="selectedUser.id!=messaged.senderId" [ngClass]="messaged.dateRead===null? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
       </div>
     </div>
     <div class="chat-footer text-muted ng-custom-boder p-2">

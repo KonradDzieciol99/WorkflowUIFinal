@@ -48,5 +48,8 @@ export class TeamHomeComponent implements OnInit {
   ngAfterViewInit() {
     this.sizeService.currentButtonStateSource$.pipe().subscribe((data:boolean)=>{this.drawer.toggle(data)})
   }
+  closeSideNav(){
+    
+  }
 
 }

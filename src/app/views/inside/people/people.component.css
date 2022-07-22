@@ -7,7 +7,9 @@
     background-color: #00c853;
     color: black;
 }
-
+.seen-icon{
+    margin-left: 0.4rem;
+}
 .container-fluid{
 
     /* height: -moz-calc(100% - 72px);
